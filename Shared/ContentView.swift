@@ -12,17 +12,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if flag {
-                ExampleView()
+                Button("ADOPT NEW HOMEBOI!", action: {
+                    self.flag.toggle()
+                })
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.accentColor)
+                    .cornerRadius(8)
             }else{
-                OtherExampleView()
+                DisplayHomeboi()
             }
-            
-            Button("GET HOMEBOI!", action: {
-                self.flag.toggle()
-            })
-                .buttonStyle(.borderless)
-                .background(Color.white)
-                .padding()
         }
     }
 }
@@ -38,12 +37,13 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct ExampleView: View {
-     var body: some View {
+    var body: some View {
         Text("some text")
     }
 }
-struct OtherExampleView: View {
+struct DisplayHomeboi: View {
     var body: some View {
-        Text("other text")
+        Text("Gang")  // Name of the homeboi
+        HomeboiGif("384")  // Name of GIF
     }
 }

@@ -17,6 +17,10 @@
 		67F03E2C271FC17A00A37705 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F03E02271FC17800A37705 /* ContentView.swift */; };
 		67F03E2D271FC17A00A37705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F03E03271FC17A00A37705 /* Assets.xcassets */; };
 		67F03E2E271FC17A00A37705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67F03E03271FC17A00A37705 /* Assets.xcassets */; };
+		67F03E3E271FE3B700A37705 /* 384.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67F03E3D271FE3B700A37705 /* 384.gif */; };
+		67F03E3F271FE3B700A37705 /* 384.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67F03E3D271FE3B700A37705 /* 384.gif */; };
+		67F03E41271FE3E200A37705 /* HomeboiGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F03E40271FE3E200A37705 /* HomeboiGif.swift */; };
+		67F03E42271FE3E200A37705 /* HomeboiGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F03E40271FE3E200A37705 /* HomeboiGif.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		67F03E21271FC17A00A37705 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F03E25271FC17A00A37705 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		67F03E27271FC17A00A37705 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		67F03E3D271FE3B700A37705 /* 384.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 384.gif; sourceTree = "<group>"; };
+		67F03E40271FE3E200A37705 /* HomeboiGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeboiGif.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 			children = (
 				67F03E01271FC17800A37705 /* WAGmiApp.swift */,
 				67F03E02271FC17800A37705 /* ContentView.swift */,
+				67F03E40271FE3E200A37705 /* HomeboiGif.swift */,
+				67F03E3D271FE3B700A37705 /* 384.gif */,
 				67F03E03271FC17A00A37705 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -266,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F03E3E271FE3B700A37705 /* 384.gif in Resources */,
 				67F03E2D271FC17A00A37705 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F03E3F271FE3B700A37705 /* 384.gif in Resources */,
 				67F03E2E271FC17A00A37705 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +311,7 @@
 			files = (
 				67F03E2B271FC17A00A37705 /* ContentView.swift in Sources */,
 				67F03E29271FC17A00A37705 /* WAGmiApp.swift in Sources */,
+				67F03E41271FE3E200A37705 /* HomeboiGif.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +321,7 @@
 			files = (
 				67F03E2C271FC17A00A37705 /* ContentView.swift in Sources */,
 				67F03E2A271FC17A00A37705 /* WAGmiApp.swift in Sources */,
+				67F03E42271FE3E200A37705 /* HomeboiGif.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
