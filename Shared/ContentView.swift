@@ -56,7 +56,7 @@ struct DisplayHomeboi: View {
             
             Button(action: {
                 print("moving to map view...")
-                MapTravelView()
+//                MapTravelView()
             }){
                 Text("Map View")
                     .padding()
