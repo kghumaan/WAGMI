@@ -9,19 +9,22 @@ import SwiftUI
 import MapKit
 
 struct ContentView: View {
-    @State var noHomeboiAvailable = false  // should be held in memory
+    @State var wagmiAvailable = true  // should be held in memory
     var body: some View {
-        VStack {
-            if noHomeboiAvailable {
-                Button("ADOPT NEW HOMEBOI!", action: {
-                    self.noHomeboiAvailable.toggle()
-                })
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.accentColor)
-                    .cornerRadius(8)
-            }else{
-                DisplayHomeboi()
+        
+        HStack {
+            VStack {
+                if !wagmiAvailable {
+                    Button("ADOPT NEW HOMEBOI!", action: {
+                        self.wagmiAvailable.toggle()
+                    })
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.accentColor)
+                        .cornerRadius(8)
+                }else{
+                    DisplayHomeboi()
+                }
             }
         }
     }
@@ -33,36 +36,47 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct DisplayHomeboi: View {
+    
+    @State var mapViewEnabled = true
+    
     var body: some View {
-        Text("Gang") // Name of the homeboi
-        HomeboiGif("384")  // Name of GIF
-        List {
-            HStack {
-                Text("Health:")
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.red)
-                    .scaleEffect(CGSize(width: 1, height: 0.1))
-            }
-            HStack {
-                Text("Happiness:")
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.yellow)
-                    .scaleEffect(CGSize(width: 1, height: 0.1))
-            }
-            HStack {
-                Text("Total steps:")
-                Text("2,324").font(.headline).bold().italic()
-            }
+        
+        if mapViewEnabled {
             
-            Button(action: {
-                print("moving to map view...")
-//                MapTravelView()
-            }){
-                Text("Map View")
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .border(Color.blue)
-                    .padding()
+            MapTravelView()
+            
+        }else{
+            Text("Gang") // Name of the homeboi
+            
+            HomeboiGif("384")  // Name of GIF
+            
+            List {
+                HStack {
+                    Text("Health:")
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.red)
+                        .scaleEffect(CGSize(width: 1, height: 0.1))
+                }
+                HStack {
+                    Text("Happiness:")
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.yellow)
+                        .scaleEffect(CGSize(width: 1, height: 0.1))
+                }
+                HStack {
+                    Text("Steps accumulated:")
+                    Text("2,324").font(.headline).bold().italic()
+                }
+                
+                Button(action: {
+                    self.mapViewEnabled.toggle()
+                }){
+                    Text("Map View")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .border(Color.blue)
+                        .padding()
+                }
             }
         }
         
@@ -70,10 +84,11 @@ struct DisplayHomeboi: View {
 }
 
 struct MapTravelView: View{
+    
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     var body: some View {
         Map(coordinateRegion: $region)
-            .frame(width: 400, height: 300)
+            .scaleEffect(CGSize(width: 1, height: 1)).preferredColorScheme(ColorScheme.dark)
     }
 }
