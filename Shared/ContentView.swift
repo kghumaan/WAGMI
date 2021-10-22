@@ -53,19 +53,23 @@ struct DisplayHomeboi: View {
                 
                 List {
                     HStack {
-                        Text("Health:").frame(width: 90, height: 0.2, alignment: Alignment.leading)
+                        Image(systemName: "heart.fill")
+                        Text("Health:").frame(width: 60, height: 0.2, alignment: Alignment.leading)
                         ProgressView(value: 0.6)
                     }
                     HStack {
-                        Text("Happiness:").frame(width: 90, height: 0.2, alignment: Alignment.leading)
+                        Image(systemName: "smiley.fill")
+                        Text("Joy:").frame(width: 60, height: 0.2, alignment: Alignment.leading)
                         ProgressView(value: 0.8)
                     }
                     HStack {
-                        Text("Charm:").frame(width: 90, height: 0.2, alignment: Alignment.leading)
+                        Image(systemName: "sparkles")
+                        Text("Charm:").frame(width: 60, height: 0.2, alignment: Alignment.leading)
                         ProgressView(value: 0.4)
                     }
                     HStack {
-                        Text("Rest:").frame(width: 90, height: 0.2, alignment: Alignment.leading)
+                        Image(systemName: "bed.double.fill")
+                        Text("Rest:").frame(width: 60, height: 0.2, alignment: Alignment.leading)
                         ProgressView(value: 1.0)
                     }
                     HStack {
@@ -76,16 +80,25 @@ struct DisplayHomeboi: View {
                         Text("NEXT LEVEL:").bold().frame(maxWidth: .infinity, alignment: .leading)
                         HStack {
                             ProgressView(value: 0.8).colorMultiply(Color.red)
-                            Image(systemName: "star.fill").foregroundColor(Color.yellow)
+                            VStack {
+                                Text("Lvl 18")
+                                Image(systemName: "star.fill").foregroundColor(Color.yellow)
+                            }.frame(alignment: .top)
                         }
                     }
                     
                     Button(action: {
                         self.mapViewEnabled.toggle()
                     }){
-                        Text("Map View")
-                            .frame(maxWidth: .infinity)
-                            .border(Color.blue)
+                        HStack {
+                            Image(systemName: "mappin.and.ellipse")
+                                .font(.title)
+                            Text("map view")
+                                .fontWeight(.semibold)
+                                .font(.title)
+                        }
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
                     }
                 }
             }
