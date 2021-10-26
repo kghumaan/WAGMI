@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6753BD022724A65700F659A3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753BD012724A65700F659A3 /* MapView.swift */; };
+		6753BD032724A65700F659A3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753BD012724A65700F659A3 /* MapView.swift */; };
 		67F03E1A271FC17A00A37705 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F03E19271FC17A00A37705 /* Tests_iOS.swift */; };
 		67F03E1C271FC17A00A37705 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F03E1B271FC17A00A37705 /* Tests_iOSLaunchTests.swift */; };
 		67F03E26271FC17A00A37705 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F03E25271FC17A00A37705 /* Tests_macOS.swift */; };
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6753BD012724A65700F659A3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		67F03E01271FC17800A37705 /* WAGmiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAGmiApp.swift; sourceTree = "<group>"; };
 		67F03E02271FC17800A37705 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		67F03E03271FC17A00A37705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 				67F03E40271FE3E200A37705 /* HomeboiGif.swift */,
 				67F03E3D271FE3B700A37705 /* 384.gif */,
 				67F03E03271FC17A00A37705 /* Assets.xcassets */,
+				6753BD012724A65700F659A3 /* MapView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -310,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F03E2B271FC17A00A37705 /* ContentView.swift in Sources */,
+				6753BD022724A65700F659A3 /* MapView.swift in Sources */,
 				67F03E29271FC17A00A37705 /* WAGmiApp.swift in Sources */,
 				67F03E41271FE3E200A37705 /* HomeboiGif.swift in Sources */,
 			);
@@ -320,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67F03E2C271FC17A00A37705 /* ContentView.swift in Sources */,
+				6753BD032724A65700F659A3 /* MapView.swift in Sources */,
 				67F03E2A271FC17A00A37705 /* WAGmiApp.swift in Sources */,
 				67F03E42271FE3E200A37705 /* HomeboiGif.swift in Sources */,
 			);

@@ -39,90 +39,55 @@ struct DisplayHomeboi: View {
     @State var mapViewEnabled = false
     
     var body: some View {
-        
-        if mapViewEnabled {
             
-            MapTravelView()
+        VStack {
             
-        }else{
+            HomeboiGif("384").frame(width: .infinity, height: 300, alignment: .center)  // TODO: height should reflect size of GIF
             
-            
-            VStack {
+            List {
+                HStack {
+                    Image(systemName: "heart.fill")
+                    ProgressView(value: 0.6)
+                }.padding(10)
+                HStack {
+                    Image(systemName: "smiley.fill")
+                    ProgressView(value: 0.8)
+                }.padding(10)
+                HStack {
+                    Image(systemName: "sparkles")
+                    ProgressView(value: 0.4)
+                }.padding(10)
+                HStack {
+                    Image(systemName: "bed.double.fill")
+                    ProgressView(value: 1.0)
+                }.padding(10)
+                HStack {
+                    Text("Steps accumulated:")
+                    Text("2,324").font(.headline).bold().italic().frame(alignment: Alignment.trailing)
+                }.padding(10)
+                VStack {
+                    Text("NEXT LEVEL:").bold().frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        ProgressView(value: 0.6).shadow(color: Color(red: 0.3, green: 0.8, blue: 0.6),
+                                    radius: 4.0, x: 1.0, y: 2.0)
+                            .foregroundColor(Color.yellow)
+                        VStack {
+                            Text("Lvl 18")
+                            Image(systemName: "star.fill").foregroundColor(Color.black)
+                        }.frame(alignment: .top)
+                    }
+                }.padding(10)
                 
-                HomeboiGif("384").frame(width: .infinity, height: 260, alignment: .center)  // TODO: height should reflect size of GIF
-                
-                List {
-                    HStack {
-                        Image(systemName: "heart.fill")
-                        Text("Health:").frame(width: 60, height: 0.2, alignment: Alignment.leading)
-                        ProgressView(value: 0.6)
-                    }
-                    HStack {
-                        Image(systemName: "smiley.fill")
-                        Text("Joy:").frame(width: 60, height: 0.2, alignment: Alignment.leading)
-                        ProgressView(value: 0.8)
-                    }
-                    HStack {
-                        Image(systemName: "sparkles")
-                        Text("Charm:").frame(width: 60, height: 0.2, alignment: Alignment.leading)
-                        ProgressView(value: 0.4)
-                    }
-                    HStack {
-                        Image(systemName: "bed.double.fill")
-                        Text("Rest:").frame(width: 60, height: 0.2, alignment: Alignment.leading)
-                        ProgressView(value: 1.0)
-                    }
-                    HStack {
-                        Text("Steps accumulated:")
-                        Text("2,324").font(.headline).bold().italic().frame(alignment: Alignment.trailing)
-                    }
-                    VStack {
-                        Text("NEXT LEVEL:").bold().frame(maxWidth: .infinity, alignment: .leading)
-                        HStack {
-                            ProgressView(value: 0.8).colorMultiply(Color.red)
-                            VStack {
-                                Text("Lvl 18")
-                                Image(systemName: "star.fill").foregroundColor(Color.yellow)
-                            }.frame(alignment: .top)
-                        }
-                    }
-                    
-                    Button(action: {
-                        self.mapViewEnabled.toggle()
-                    }){
-                        HStack {
-                            Image(systemName: "mappin.and.ellipse")
-                                .font(.title)
-                            Text("map view")
-                                .fontWeight(.semibold)
-                                .font(.title)
-                        }
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding()
-                    }
-                }
+                Button(action: {
+                    self.mapViewEnabled.toggle()
+                }){
+                    Image(systemName: "globe")
+                        .font(.title).foregroundColor(Color.blue)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                }.padding(10)
             }
+        }.sheet(isPresented: $mapViewEnabled) {
+            TravelView(mapViewEnabled: $mapViewEnabled)
         }
-        
-    }
-}
-
-struct MapTravelView: View{
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-    
-    var body: some View {
-        Map(coordinateRegion: $region)
-            .scaleEffect(CGSize(width: 1, height: 1)).preferredColorScheme(ColorScheme.dark)
-    }
-}
-
-struct ProgressBar: ProgressViewStyle {
-    let color: Color
-    
-    func makeBody(configuration: Configuration) -> some View {
-        
-        // TODO: figure out how to set color...
-        ProgressView(configuration).shadow(color: Color(red: 0.3, green: 0.8, blue: 0.6),
-                    radius: 4.0, x: 1.0, y: 2.0)
     }
 }
